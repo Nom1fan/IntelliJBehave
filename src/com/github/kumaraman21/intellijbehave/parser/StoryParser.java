@@ -125,11 +125,22 @@ public class StoryParser implements PsiParser {
   }
 
   private void parseTableIfPresent(PsiBuilder builder) {
+    if(builder.getTokenType() == StoryTokenType.TABLE_HEADER) {
+      while(builder.getTokenType() == StoryTokenType.TABLE_HEADER) {
+        parseTableHeader(builder);
+      }
+    }
+
+
     if(builder.getTokenType() == StoryTokenType.TABLE_ROW) {
       while(builder.getTokenType() == StoryTokenType.TABLE_ROW) {
        parseTableRow(builder);
       }
      }
+  }
+
+  private void parseTableHeader(PsiBuilder builder) {
+      //builder.
   }
 
   private void parseTableRow(PsiBuilder builder) {

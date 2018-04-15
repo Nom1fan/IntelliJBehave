@@ -50,12 +50,13 @@ public class StorySyntaxHighlighter extends SyntaxHighlighterBase {
                                                 SyntaxHighlighterColors.INVALID_STRING_ESCAPE.getDefaultAttributes());
 
   static {
-    KEYS = new THashMap<IElementType, TextAttributesKey>();
+    KEYS = new THashMap<>(8);
 
     KEYS.put(StoryTokenType.STORY_DESCRIPTION, STORY_DESCRIPTION_ATTRIBUTES);
     KEYS.put(StoryTokenType.SCENARIO_TEXT, SCENARIO_TEXT_ATTRIBUTES);
     KEYS.put(StoryTokenType.STEP_TYPE, STEP_TYPE_ATTRIBUTES);
     KEYS.put(StoryTokenType.STEP_TEXT, STEP_TEXT_ATTRIBUTES);
+    KEYS.put(StoryTokenType.TABLE_HEADER, STEP_TEXT_ATTRIBUTES);
     KEYS.put(StoryTokenType.TABLE_ROW, STEP_TEXT_ATTRIBUTES);
     KEYS.put(StoryTokenType.COMMENT, COMMENT_ATTRIBUTES);
     KEYS.put(StoryTokenType.BAD_CHARACTER, BAD_CHARACTER_ATTRIBUTES);
